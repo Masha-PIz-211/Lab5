@@ -24,7 +24,7 @@ int sum(int x[], int n, int c, int d)
 { 
   int s=0;
   for (int i=0; i<n; i++) 
-   	if (x[i]>c || x[i]<d) 
+   	if (x[i]<c || x[i]>d) 
    	  s=s+x[i];
   return s; 
 }
