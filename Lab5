@@ -1,0 +1,48 @@
+/* ********************** *
+* Власова Мария 
+* Программирование линейных алгоритмов
+* Вариант 2
+* ***********************/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+void mas(int x[], int n) 
+{ 
+  for (int i=0; i<n; i++) 
+{ 
+   	x[i]=rand()%20+1; 
+  	cout << x[i] << "  "; 
+  }
+  cout << endl; 
+}
+
+int sum(int x[], int n, int c, int d) 
+{ 
+  int s=0;
+  for (int i=0; i<n; i++) 
+   	if (x[i]>c || x[i]<d) 
+   	  s=s+x[i];
+  return s; 
+}
+ 
+int main() {
+  setlocale(0, ""); 
+  int x[30], z[30], c, d, k, n; 
+  srand(time(NULL)); 
+  cout << "Введите интервал [c, d] : ";
+  cin >> c >> d;
+  cout << "Введите размерности массивов X и Z : ";
+  cin >> k >> n;
+  cout << "Исходный массив X \n";
+  mas(x, k); // ввод массива X
+  cout << "Исходный массив Z \n";
+  mas(z, n); // ввод массива Z
+  cout << "Сумма элементов X, не попавших в [c, d] : " << sum(x,k,c,d) << endl;
+  cout << "Сумма элементов Z, не попавших в [c, d] : " << sum(z,n,c,d) << endl;
+  system("pause"); 
+  return 0;
+}
