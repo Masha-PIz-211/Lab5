@@ -29,7 +29,8 @@ int sum(int x[], int n, int c, int d)
   return s; 
 }
  
-int main() {
+int main() 
+{
   setlocale(0, ""); 
   int x[30], z[30], c, d, k, n; 
   srand(time(NULL)); 
@@ -38,9 +39,9 @@ int main() {
   cout << "Введите размерности массивов X и Z : ";
   cin >> k >> n;
   cout << "Исходный массив X \n";
-  mas(x, k); // ввод массива X
+  mas(x, k);
   cout << "Исходный массив Z \n";
-  mas(z, n); // ввод массива Z
+  mas(z, n); 
   cout << "Сумма элементов X, не попавших в [c, d] : " << sum(x,k,c,d) << endl;
   cout << "Сумма элементов Z, не попавших в [c, d] : " << sum(z,n,c,d) << endl;
   system("pause"); 
